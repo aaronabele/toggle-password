@@ -18,16 +18,16 @@ btn.addEventListener("click", function (e) {
 const app = Vue.createApp({
   data() {
     return {
-      visible: false,
+      type: "password",
     };
   },
   methods: {
     togglePasswordVis() {
-      this.visible = !this.visible;
-
-      this.visible
-        ? (userPassword.type = "text")
-        : (userPassword.type = "password");
+      if (this.type === "password") {
+        this.type = "text";
+      } else {
+        this.type = "password";
+      }
     },
   },
 }).mount("#app");
