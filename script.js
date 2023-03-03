@@ -1,4 +1,4 @@
-let visible = false;
+/* let visible = false;
 
 const btn = document.querySelector("button");
 
@@ -13,4 +13,21 @@ btn.addEventListener("click", function (e) {
     btn.value = "Show Password";
     btn.innerHTML = "Show Password";
   }
-});
+}); */
+
+const app = Vue.createApp({
+  data() {
+    return {
+      visible: false,
+    };
+  },
+  methods: {
+    togglePasswordVis() {
+      this.visible = !this.visible;
+
+      this.visible
+        ? (userPassword.type = "text")
+        : (userPassword.type = "password");
+    },
+  },
+}).mount("#app");

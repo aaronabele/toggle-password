@@ -8,8 +8,11 @@
     <title>Password Toggle</title>
   </head>
   <body>
-    <input id="userPassword" type="password" />
-    <button class="btn">Show Password</button>
+    <div id="app">
+      <input id="userPassword" type="password" :class="visible" />
+      <button class="btn" @click="togglePasswordVis">Show Password</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
